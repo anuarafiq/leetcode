@@ -5,9 +5,12 @@ class Solution(object):
         :type target: int
         :rtype: List[int]
         """
-        for i in range(0 , len(nums) - 1):
-            for j in range(i + 1 , len(nums)):
-                if nums[i] + nums[j] == int(target):
-                    solution = [i , j]
-                    return solution
+        seen = {}
+        for i, n in enumerate(nums):
+            diff = target - n
+            if diff in seen:
+                return [seen[diff], i]
+            else:
+                seen[n] = i
         return None
+
