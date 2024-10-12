@@ -4,13 +4,13 @@ class Solution(object):
             return True
         if t == "":
             return False
-       
+
         i = 0
         for letter in t:
-            pointer1 = s[i]
-            if letter == pointer1:
+            pointer = s[i]
+            if letter == s[i]:
                 i += 1
                 if i == len(s):
                     return True
-            
+        
         return False
